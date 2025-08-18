@@ -29,7 +29,7 @@ export async function fetchRevenue() {
     throw new Error('Failed to fetch revenue data.');
   }
 }
-
+// Fetch the last 5 invoices, sorted by date
 export async function fetchLatestInvoices() {
   try {
     const data = await sql<LatestInvoiceRaw[]>`
@@ -37,7 +37,7 @@ export async function fetchLatestInvoices() {
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
-      LIMIT 5`;
+      LIMIT 6`;
 
     const latestInvoices = data.map((invoice) => ({
       ...invoice,
@@ -216,3 +216,4 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+
