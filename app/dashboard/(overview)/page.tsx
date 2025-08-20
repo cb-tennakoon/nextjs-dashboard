@@ -6,6 +6,7 @@ import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton ,CardsSkeleton,} from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import Search from '@/app/ui/search';
 
 export default async function Page() {
 
